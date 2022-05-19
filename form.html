@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- - - - -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- - - - -->
+    <!-- CSS File -->
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- - - - -->
+    <title>بيت المشاوي</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="menu-logo-cont">
+            <a href="index.html" class="logo">بيت المشاوى</a>
+            <div class="menu-toggler">
+              <span></span>
+            </div>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html">الرئيسية</a>
+            </li>
+            <li>
+              <a href="menu.html">قائمة الطعام</a>
+            </li>
+            <li>
+              <a href="about.html">عن المطعم</a>
+            </li>
+            <li>
+              <a href="chefs.html">الطهاه</a>
+            </li>
+            <li>
+              <a class="active" href="form.html">نموذج الاتصال</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="home">
+      <div class="preview-image">
+        <h1>تواصل معنا</h1>
+        <p>
+          نحن نقدم افضل و الذ الماكولات الشهية و الطاذخة حيث انه يتوفر عندنا
+          افضل انوام اللحوم كما اننا اساتذة فى اختيار المكونات التى تجعل الطعام
+          يبدوا الذ و افضل من غيره.
+        </p>
+      </div>
+      <br />
+      <form
+        class="form"
+        action="form-action.html"
+        method="get"
+        autocomplete="off"
+      >
+        <div class="form-field">
+          <h2 class="span-2">قم بإدخال معلوماتك الشخصية</h2>
+          <div class="input-flex-field">
+            <div class="fname">
+              <input
+                type="text"
+                name="fName"
+                placeholder="الاسم الأول"
+                pattern="(?!.*\s)[a-zA-Z\u0621-\u064A]{3,}"
+                errorMessage="You should enter a valid name"
+                required
+              />
+            </div>
+            <div class="lname">
+              <input
+                type="text"
+                name="lName"
+                placeholder="اسم العائلة"
+                pattern="(?!.*\s)[a-zA-Z\u0621-\u064A]{3,}"
+                errorMessage="You should enter a valid name"
+                required
+              />
+            </div>
+            <div class="email">
+              <input
+                type="email"
+                name="email"
+                placeholder="البريد الإلكترونى"
+                pattern="(?=.*[a-zA-Z])[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}"
+                errorMessage="You should enter a valid email address -br- i.e: text@text.text"
+                required
+              />
+            </div>
+            <div class="password">
+              <input
+                type="password"
+                name="pw"
+                placeholder="كلمة السر"
+                pattern="[A-Z](?=.*[0-9])(?!.*\s)(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*\u0621-\u064A]{7}"
+                errorMessage="You should enter a valid password -br- -> must be 8 characters (no more, no less) -br- -> must start with capital letter -br- -> must contains at least one digit -br- -> must contains at least one symbol"
+                required
+              />
+            </div>
+            <div class="mobile">
+              <input
+                type="text"
+                name="mobile"
+                class="left-dir"
+                placeholder="Phone Number"
+                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                errorMessage="You should enter a valid phone number"
+                required
+              />
+            </div>
+            <div class="address">
+              <input
+                type="text"
+                name="address"
+                placeholder="العنوان"
+                required
+              />
+            </div>
+          </div>
+          <div class="gender span-2">
+            <input type="radio" name="gender" required value="male" id="male" />
+            <label for="male">ذكر</label>
+            &nbsp; &nbsp; &nbsp;
+            <input
+              type="radio"
+              name="gender"
+              required
+              value="female"
+              id="female"
+            />
+            <label for="female">أنثى</label>
+          </div>
+          <div class="submitting">
+            <input type="submit" class="primary-button" value="تسجيل الدخول" />
+          </div>
+        </div>
+      </form>
+    </section>
+    <footer>
+      <p>كل الحقوق محفوظة لدا بيت المشاوى 2022 &copy;</p>
+    </footer>
+    <script src="assets/main.js"></script>
+  </body>
+</html>

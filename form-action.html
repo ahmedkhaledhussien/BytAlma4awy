@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- - - - -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #values-field {
+        text-align: center;
+      }
+      h2 {
+        padding-bottom: 15px;
+      }
+      table {
+        text-align: left;
+        margin: 20px auto 40px;
+        width: 100%;
+        max-width: 800px;
+        border: 1px solid #aaa;
+      }
+      table tr:nth-child(odd) {
+        background-color: #dedede;
+      }
+      table tr:nth-child(even) {
+        background-color: #eee;
+      }
+      table tr td {
+        padding: 10px;
+      }
+      table tr td:first-child {
+        font-weight: 600;
+      }
+      .home-btn {
+        display: inline-block;
+        font-size: 18px;
+        padding: 10px 20px;
+        margin: 0 auto;
+        text-decoration: none;
+        border: none;
+        border-radius: 10px;
+        background-color: #9b5c04;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .home-btn:hover {
+        background-color: #663c01;
+      }
+    </style>
+    <title>Form Submittion Values</title>
+  </head>
+  <body>
+    <div id="values-field"></div>
+
+    <script>
+      const field = document.getElementById("values-field");
+
+      const queryString = new URLSearchParams(window.location.search);
+
+      const heading = document.createElement("h2");
+      heading.appendChild(
+        document.createTextNode("Thanks for your submittion")
+      );
+      field.appendChild(heading);
+
+      const table = document.createElement("table");
+
+      for (let param of queryString.entries()) {
+        const tableRow = document.createElement("tr");
+        param.forEach((e) => {
+          const tableCol = document.createElement("td");
+          tableCol.appendChild(document.createTextNode(e));
+          tableRow.appendChild(tableCol);
+        });
+        table.appendChild(tableRow);
+      }
+
+      field.appendChild(table);
+
+      const backHome = document.createElement("a");
+      backHome.appendChild(document.createTextNode("Go Home"));
+      backHome.href = "index.html";
+      backHome.classList.add("home-btn");
+      field.appendChild(backHome);
+    </script>
+  </body>
+</html>
